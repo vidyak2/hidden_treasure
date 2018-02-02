@@ -1,0 +1,41 @@
+/*
+canvas {
+  border: 1px solid #d3d3d3;
+  background-color: #f1f1f1;
+  height: 400px;
+  width: 400px;
+}
+*/
+
+/* General styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+}
+
+/* h2 styles */
+
+h1 {
+  text-align: center;
+}
+
+/* Button styles */
+
+button {
+  background: #32CD32;
+  border: 4px outset green;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem grey;
+}
