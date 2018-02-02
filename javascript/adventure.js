@@ -2,13 +2,19 @@
 var maxX = 2;
 var maxY = 2;
 
+//Make the game area larger: they now have 100 spaces to play in
+
 //(x,y) grid, with first square = (0,0)
 var userX = 0;
 var userY = 0;
 
 //Hide the treasure, also with (x,y) values, not randomized yet
-var treasureX = 2;
-var treasureY = 1;
+//var treasureX = 2;
+//var treasureY = 1;
+
+//Hide treasure in random (x,y) values between 0 and 99
+//var treasureX = Math.floor(Math.random() * 10);
+//var treasureY = Math.floor(Math.random() * 10);
 
 //Main loop control
 var treasureFound = false;
@@ -16,7 +22,7 @@ var treasureFound = false;
 //Get user's name
 var name = prompt("Welcome brave adventurer! What is your name?");
 
-//You can add "Hello ____, where would you want to move?
+//You can add "Hello ____, where would you want to move?"
 while (!treasureFound) {
   var direction = prompt("Which direction would you like to go in? (North, South, East, West)")
   console.log(direction);
