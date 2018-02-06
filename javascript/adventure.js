@@ -1,11 +1,9 @@
-//Define the size of the game play area (the board)
-//var maxX = 2;
-//var maxY = 2;
-
-//Extra challenge: Create variable for background music
+//Extra challenge: Create background music 
+//Create variable
 var music = new Audio("audio/backgroundmusic.mp3")
 
-//Extra challenge: Make the game area larger: they now have 100 spaces to play in
+//Extra challenge: Make the game area larger
+//There is now have 36 spaces to play in
 var maxX = 6;
 var maxY = 6;
 
@@ -13,27 +11,31 @@ var maxY = 6;
 var userX = 0;
 var userY = 0;
 
-//Hide the treasure, also with (x,y) values, not randomized yet
-var treasureX = 2;
-var treasureY = 1;
-
 //Extra challenge: Hide treasure in random (x,y) values between 0 and 5
 var treasureX = Math.floor(Math.random() * 6);
 var treasureY = Math.floor(Math.random() * 6);
 
-//So we can keep track of the treasure in console.log
+//Keep track of the treasure
 console.log(treasureX)
 console.log(treasureY)
 
+//Extra challenge: Create a villain 
+//The villain is found randomly in the same board area as the user
+var villainX = Math.floor(Math.random() * 6);
+var villainY = Math.floor(Math.random() * 6);
+
+//Keep track of villain 
+console.log(villainX)
+console.log(villainY)
+
 //Main loop control
 var treasureFound = false;
+var foundvillain = false;
 
-//Get user's name
+//Get user name
 var name = prompt("Welcome brave adventurer! What is your name?");
 
-//var backgroundmusic = document.getElementById("music");
-
-//Extra challenge: Define variables to start game, and create a starting button attached to the function "begin"
+//Extra challenge: Create a start button attached to the function "begin"
 function begin() {
 
   //Music plays on start
@@ -43,15 +45,17 @@ function begin() {
   music.volume = 0.2;
 
 
-  //You can add "Hello ____, where would you want to move?"
-  while (!treasureFound) {
+  //Main loop
+  while (!treasureFound && !foundvillain) {
+    //Prompt once game begins
     var direction = prompt("Which direction would you like to go in? (North, South, East, West)")
 
-    //Extra challenge: Input is now case insensitive, so user can input direction name with any case
+    //Extra challenge: Case insensitive inputs 
+    //User can input direction name with any case
     var directioncaseinsensitive = direction.toLowerCase();
     console.log(directioncaseinsensitive);
 
-    //Temporary vars only used for checking the validity of the new user location after move
+    //Temporary vars used for checking validity of the new user location
     var newX
     var newY
 
@@ -60,7 +64,7 @@ function begin() {
       newX = userX;
       newY = userY + 1;
       //Check if new user location is valid
-      //neither value <0, neither is > max
+      //neither <0, nor >max
       if (newX >= 0 && newY >= 0 && newX <= maxX && newY <= maxY) {
         userX = newX;
         userY = newY;
@@ -100,13 +104,19 @@ function begin() {
     } else {
       console.log("Please enter a valid direction")
     }
-    //Check if new user location is treasure
-    //See if user location matches treasure
-    if (userX == treasureX && userY == treasureY) {
-      treasureFound = true;
 
-      console.log("You won!")
+    //Check if the villain found the user
+    if (newX == villainX && newY == villainY) {
+      //If yes, the game ends
+      foundvillain = true;
+      console.log("The villain found you!! You lost!!")
     }
 
+    //Check if new user location matches the treasure
+    if (userX == treasureX && userY == treasureY) {
+      //If yes, the game ends
+      treasureFound = true;
+      console.log("Congrats!! You won!!")
+    }
   }
 }
