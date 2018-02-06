@@ -2,7 +2,7 @@
 //function game() {
 //  //  gamearea.start();
 //}
-
+//
 //var gamearea = {
 //  canvas: document.createElement("canvas"),
 //  start: function () {
@@ -13,7 +13,7 @@
 //    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
 //  }
 //}
-
+//
 //var canvas = document.getElementById("mycanvas");
 //var ctx = canvas.getContext("2d");
 //ctx.fillStyle = "#FF0000";

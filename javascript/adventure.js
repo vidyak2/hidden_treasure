@@ -2,6 +2,9 @@
 //var maxX = 2;
 //var maxY = 2;
 
+//Extra challenge: Create variable for background music
+var music = new Audio("audio/backgroundmusic.mp3")
+
 //Extra challenge: Make the game area larger: they now have 100 spaces to play in
 var maxX = 6;
 var maxY = 6;
@@ -13,12 +16,6 @@ var userY = 0;
 //Hide the treasure, also with (x,y) values, not randomized yet
 var treasureX = 2;
 var treasureY = 1;
-
-//Extra challenge: Define variables to start game, and create a starting button attached to the html function "start"
-var currentlyplaying = false;
-var startingbutton;
-
-startingbutton = start.add.button()
 
 //Extra challenge: Hide treasure in random (x,y) values between 0 and 5
 var treasureX = Math.floor(Math.random() * 6);
@@ -34,12 +31,21 @@ var treasureFound = false;
 //Get user's name
 var name = prompt("Welcome brave adventurer! What is your name?");
 
-function start() {
+//var backgroundmusic = document.getElementById("music");
+
+//Extra challenge: Define variables to start game, and create a starting button attached to the function "begin"
+function begin() {
+
+  //Music plays on start
+  music.play();
+
+  //Lower music volume, since this is only for background ambiance
+  music.volume = 0.2;
+
 
   //You can add "Hello ____, where would you want to move?"
   while (!treasureFound) {
     var direction = prompt("Which direction would you like to go in? (North, South, East, West)")
-    console.log(direction);
 
     //Extra challenge: Input is now case insensitive, so user can input direction name with any case
     var directioncaseinsensitive = direction.toLowerCase();
@@ -101,6 +107,6 @@ function start() {
 
       console.log("You won!")
     }
-  }
 
+  }
 }
