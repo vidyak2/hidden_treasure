@@ -6,24 +6,22 @@
   box-sizing: border-box;
 }
 
-/* Body styles */
-
-body {
-  font-size: 100%;
-  font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
-  background-color: #FFFFFF;
-}
 
 /* Background image styles */
 
-img.background {
+img {
   width: 100vmax;
   min-width: 100vmin;
   opacity: 0.1;
   position: absolute;
 }
 
-/* Header styles */
+body {
+  font-size: 100%;
+  font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+/* h1 styles */
 
 h1 {
   font-family: 'Rammetto One', cursive;
@@ -55,7 +53,7 @@ p {
   padding: 1rem;
 }
 
-/*Button styles */
+/* Button styles */
 
 button {
   background: #ccffdd;
