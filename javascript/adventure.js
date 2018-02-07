@@ -109,7 +109,7 @@ function begin() {
     if (newX == villainX && newY == villainY) {
       //If yes, the game ends
       foundvillain = true;
-      console.log("The villain found you!! You lost!!")
+      console.log("The wolves have found you!! You lost!!")
     }
 
     //Check if new user location matches the treasure
