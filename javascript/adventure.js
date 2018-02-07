@@ -3,7 +3,7 @@
 var music = new Audio("audio/backgroundmusic.mp3")
 
 //Extra challenge: Make the game area larger
-//There is now have 36 spaces to play in
+//There is now 36 spaces 
 var maxX = 6;
 var maxY = 6;
 
